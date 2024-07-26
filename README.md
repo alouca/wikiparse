@@ -3,7 +3,7 @@ A simple golang library to parse Wikipedia XML dumps
 
 ## Usage Example
 
-`
+```
 	parser, err := wikiparse.NewWikiParser(*file)
 	if err != nil {
 		panic(err)
@@ -19,4 +19,4 @@ A simple golang library to parse Wikipedia XML dumps
 		}
 		fmt.Printf("%v\n\t%+v\n", page.Title, page.Categories)
 	}
-`
+```
