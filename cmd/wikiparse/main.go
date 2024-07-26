@@ -1,15 +1,22 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 
 	"github.com/alouca/wikiparse/wikiparse"
 )
 
-func main() {
-	file := "/Users/alouca/Downloads/enwiki-latest-pages-articles-multistream.xml.bz2"
+var (
+	file = flag.String("file", "", "path to the file")
+)
 
-	parser, err := wikiparse.NewWikiParser(file)
+func init() {
+	flag.Parse()
+}
+
+func main() {
+	parser, err := wikiparse.NewWikiParser(*file)
 	if err != nil {
 		panic(err)
 	}
